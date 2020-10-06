@@ -45,28 +45,8 @@
                 </d>
             </div>
         </div>
-        <script src="https://uzabila.ru/static/jquery/jquery-3-5-1.min.js"></script>
-        <script>
-        (function() {
-            $prev = $('#prev');
-            $next = $('#next');
-            $carouselWindow = $('#carousel_window');
-            $slides = $('.slide');
-            var slideCount = $slides.length;
-            var step = parseInt($carouselWindow.css('width'));
 
-            $('.carousel-button').on('click', function(e) {
-                var dir = $(e.target).attr('id');
-                var diff = (dir == "prev") ? step : -(step);
-
-                var currLeft = parseInt($slides.css('left'));
-                var newLeft = Math.min(0, currLeft + diff);
-                newLeft = Math.max(-((slideCount - 1) * step), newLeft);
-
-                $slides.css('left', newLeft);
-            })
-        })()
-        </script>
+    <script src="https://uzabila.ru/static/jquery/jquery-3-5-1.min.js"></script>
+    <script src="./app.js"></script>
 </body>
-
 </html>
