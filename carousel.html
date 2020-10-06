@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	
+	<div class="ads-title">
+		<a href="/ads/">Реклама</a>
+	</div>
+    <div class="carousel_container">
+        <button class="carousel-button" id="prev">&larr;</button>
+        <button class="carousel-button" id="next">&rarr;</button>
+        <div id="carousel_window">
+            <div class="slide" id="1">
+            	<p><span>Курс от Skillbox</span></p>
+                <h3>Профессия Разработчик на C++ с нуля</h3>
+                <p><img src="https://arduinoplus.ru/static/svg/c-plus-plus.svg"> Получите профессию разработчика на C++: вы научитесь понимать принципы разработки, писать код, использовать сторонние инструменты и разбираться в документации.</p>
+                <p><a href="https://skillbox.ru/course/profession-c-plus-plus/" target="_blank">Записаться на курс</a></p>
+            </div>
+            <div class="slide" id="2">
+                <h3>Курсы 2</h3>
+                <p>Курсы Skillbox</p>
+                <p><a href="#">Купить</a></p>
+            </div>
+            <div class="slide" id="3">
+                <h3>Курсы 3</h3>
+                <p>Курсы Skillbox</p>
+                <p><a href="#">Купить</a></p>
+            </div>
+            <div class="slide" id="4">
+                <h3>Курсы 4</h3>
+                <p>Курсы Skillbox</p>
+                <p><a href="#">Купить</a></p>
+            </div>
+            <div class="slide" id="5">
+                <h3>Курсы 5</h3>
+                <p>Курсы Skillbox</p>
+                <p><a href="#">Купить</a></p>
+                </d>
+            </div>
+        </div>
+        <script src="https://uzabila.ru/static/jquery/jquery-3-5-1.min.js"></script>
+        <script>
+        (function() {
+            $prev = $('#prev');
+            $next = $('#next');
+            $carouselWindow = $('#carousel_window');
+            $slides = $('.slide');
+            var slideCount = $slides.length;
+            var step = parseInt($carouselWindow.css('width'));
+
+            $('.carousel-button').on('click', function(e) {
+                var dir = $(e.target).attr('id');
+                var diff = (dir == "prev") ? step : -(step);
+
+                var currLeft = parseInt($slides.css('left'));
+                var newLeft = Math.min(0, currLeft + diff);
+                newLeft = Math.max(-((slideCount - 1) * step), newLeft);
+
+                $slides.css('left', newLeft);
+            })
+        })()
+        </script>
+</body>
+
+</html>
