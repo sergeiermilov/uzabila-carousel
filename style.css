@@ -1,8 +1,11 @@
+body {
+    font-family: Arial, Tahoma;
+}
 .ads-title {
     max-width:560px;
     margin:0 auto;
     font-size:.9em;
-    margin-bottom: 5px;
+    margin-bottom: 5px;    
 }
 .ads-title a{
     color:#565656;
